@@ -1,0 +1,17 @@
+{% extends "categorias/index.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Buscar productos para el Confort</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+<form action="{% url 'encontrarConfort' %}" method="get"> 
+    {% csrf_token %} 
+    <table>
+        <p>Ingrese el patrón de búsqueda: <input type="text" name="buscar" id="buscar"></p>
+    </table>  
+    <input type="submit" value="Buscar">  
+</form>
+{% endblock contenido %}

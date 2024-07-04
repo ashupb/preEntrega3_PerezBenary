@@ -1,0 +1,41 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block titulo %}
+<div class="masthead-heading text-uppercase">Collares Smart</div>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<div class="text-center">
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <h2 class="section-heading text-uppercase">Collares Smart</h2>
+            <h3 class="section-subheading text-muted">Contamos con dispositivos en forma de collar o medalla que tienen incorporado un GPS y, por lo tanto, pueden localizar a tu perro o gato donde sea que esté. 
+            ¡De esta forma podrás tener siempre bajo control sus ganas de explorar!</h3>
+        </div>
+    </section>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tipo</th>
+            <th>Tamaño</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for c in collares  %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.tipo }}</td>
+            <td>{{ c.tamanio }}</td>
+            <td>{{ c.precio }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}

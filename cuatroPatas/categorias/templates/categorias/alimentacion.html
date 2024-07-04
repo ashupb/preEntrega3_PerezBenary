@@ -1,0 +1,44 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block titulo%}
+<div class="masthead-heading text-uppercase">Alimentación Smart</div>
+{% endblock titulo%}
+
+
+{% block contenido %}
+
+<div class="text-center">
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <h2 class="section-heading text-uppercase">Comederos y Bebederos Smart</h2>
+            <h3 class="section-subheading text-muted">Contamos con dispensadores de comida smart, estos dispositivos permiten proporcionar las raciones diarias de comida que tu perro necesita, cuando tú lo decides. 
+            De esta forma podrás establecer hábitos específicos, evitar que tu mascota coma más de lo que debería y reducir el desperdicio de comida.</n>
+            Si la alimentación tiene un papel importante en el bienestar de los animales, la hidratación tampoco debe descuidarse. Nuestr bebedero inteligente, suministra agua cada vez que se acercan los animales, 
+            gracias a un sensor especial que detecta su presencia. Este tipo de bebedero también posee un filtro que elimina todos los residuos, garantizando un agua siempre limpia y fresca.</h3>
+        </div>
+    </section>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tipo</th>
+            <th>Tamaño</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for d in alimentacion  %}
+        <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.tipo }}</td>
+            <td>{{ d.tamanio }}</td>
+            <td>{{ d.precio }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}

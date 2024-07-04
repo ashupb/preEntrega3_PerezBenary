@@ -1,0 +1,41 @@
+{% extends "categorias/index.html" %}
+{% load static %}
+
+{% block titulo%}
+<div class="masthead-heading text-uppercase">Dispositivos Smart</div>
+{% endblock titulo%}
+
+{% block contenido %}
+
+<div class="text-center">
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <h2 class="section-heading text-uppercase">Camas y Aspiradoras Smart</h2>
+            <h3 class="section-subheading text-muted">Si tu perro tiene la costumbre de dormir contigo y te gustaría que descansara tranquilamente en su cama, tienes que probar las camas inteligentes. 
+            Estas camas para mascotas ofrecen un mayor confort que las camas clásicas, ya que permiten mantener la temperatura constante tanto en verano como en invierno.
+            Seguramente la compañía y la alegría que trae un perro o un gato a casa no tienen precio. Pero también es muy importante lograr mantener la casa limpia y ordenada.
+            Es muy fácil, solo necesitas un robot aspirador inteligente, ¡siempre preparado para limpiar con cada una de tus órdenes!</h3>
+        </div>
+    </section>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for d in confort  %}
+        <tr>
+            <td>{{ d.id }}</td>
+            <td>{{ d.tipo }}</td>
+            <td>{{ d.precio }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock contenido %}
